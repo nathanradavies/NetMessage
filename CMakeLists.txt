@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Boost 1.7 REQUIRED)
 
-add_executable(NetMessage main.cpp netmessenger.h netmessenger.cpp netmessage.h netmessage.cpp)
+add_executable(NetMessage main.cpp netmessenger.h netmessenger.cpp
+    netmessage.h netmessage.cpp tcpsock.h tcpsock.cpp)
 
 target_link_libraries(NetMessage PUBLIC Boost::boost)
