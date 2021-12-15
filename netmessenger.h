@@ -19,11 +19,11 @@
 #define NETMESSENGER_H
 
 #include "netmessage.h"
-#include<queue>
-#include<map>
-#include<mutex>
-#include<thread>
-#include<sys/socket.h>
+#include <queue>
+#include <map>
+#include <mutex>
+#include <thread>
+#include <sys/socket.h>
 
 class NetMessenger
 {
@@ -33,13 +33,16 @@ public:
     bool sendBroadcast(NetMessage m);
     bool sendDirect(string clientId, NetMessage m);
     bool isMessageWaiting();
+    bool addClient(string clientName, string ipAddress);
+    bool dropClient(string clientName);
 
 private:
     queue<NetMessage> messageQueue;
     map<string, string> clients;
     std::mutex messageQueueMutex;
+    mutex clientsMutex;
     void networkLoop();
-    thread* networkThread;
+    thread *networkThread;
 };
 
 #endif // NETMESSENGER_H

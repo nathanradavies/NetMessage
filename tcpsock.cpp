@@ -15,7 +15,7 @@
 //  along with this program; if not, write to the Free Software
 //  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-#define __USE_GNU
+//#define __USE_GNU
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,12 +24,14 @@
 #include <sys/time.h>
 #include <netinet/in.h>
 #include <netdb.h>
-#include <iostream.h>
+#include <iostream>
 #include <string.h>
 #include <errno.h>
 #include <arpa/inet.h>
 
 #include "tcpsock.h"
+
+using namespace std;
 
 tcpsockio::tcpsockio() 
 {
@@ -184,7 +186,7 @@ int tcpsockio::connect(const char *remote_name, int remote_port)
 int tcpsockio::isconnected(char *remote_name, int len)
 {
 	struct sockaddr_in peer;
-	size_t peerlen;
+	socklen_t peerlen;
 	struct hostent *hostinfo;
 
 	peerlen=sizeof(peer);
