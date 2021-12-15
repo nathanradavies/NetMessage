@@ -26,8 +26,6 @@
 #include <thread>
 #include <sys/socket.h>
 
-using namespace std;
-
 class NetMessenger
 {
 public:
@@ -40,8 +38,8 @@ public:
     bool dropClient(string clientName);
 
 private:
-    queue<NetMessage> messageQueue;
-    map<string, string> clients;
+    std::queue<NetMessage> messageQueue;
+    std::map<std::string, std::string> clients;
     std::mutex messageQueueMutex;
     mutex clientsMutex;
     void networkLoop();
