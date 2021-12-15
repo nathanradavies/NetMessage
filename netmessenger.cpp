@@ -112,7 +112,7 @@ void NetMessenger::networkLoop()
 bool NetMessenger::addClient(string clientName, string ipAddress)
 {
     lock_guard<mutex> guard(clientsMutex);
-    //clients.insert(clientName, ipAddress);
+    clients.insert(pair<string, string> (clientName, ipAddress));
     // TODO: add client to tcp code
     return true;
 }
