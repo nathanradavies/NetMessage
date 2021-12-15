@@ -15,6 +15,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
+
 #ifndef NETMESSENGER_H
 #define NETMESSENGER_H
 
@@ -24,6 +25,8 @@
 #include <mutex>
 #include <thread>
 #include <sys/socket.h>
+
+using namespace std;
 
 class NetMessenger
 {

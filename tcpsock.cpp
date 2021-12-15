@@ -378,12 +378,3 @@ int tcpsockio::read_ready(int sec, int usec)
 	
 	/* FD_ISSET(0, &rfds) will be true. */
 }
-
-	
-	
-
-
-
-
-
-
